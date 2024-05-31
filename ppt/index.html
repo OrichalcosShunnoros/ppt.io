@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors</title>
+
+    <link rel="icon" href="/ppt/src/logoppt.jpg" type="icon">
+    <link rel="shortcut icon" href="/ppt/src/logoppt.jpg" type="icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header>
+        <h1>Rock, Paper, Scissors</h1>
+    </header>
+
+    <main id="game">
+        <div id="result">
+            <section id="user">
+                <h2>User</h2>
+                <div id="uScore">0</div>
+                <article class="choices">
+                    <button id="ubtn" onclick="userChoice('rock')">
+                        <img src="/ppt/src/rock.png" alt="Rock">
+                    </button>
+                    <button id="ubtn" onclick="userChoice('paper')">
+                        <img src="/ppt/src/paper.png" alt="Paper">
+                    </button>
+                    <button id="ubtn" onclick="userChoice('scissors')">
+                        <img src="/ppt/src/scissors.png" alt="Scissors">
+                    </button>
+                </article>
+                <p>Here is your choice!</p>
+                <div id="user-choice" class="choice">
+                    <img id="user-choice-img" src="" alt="">
+                </div>
+            </section>
+
+            <button id="reload" onclick="reloadGame()">Reload</button>
+            
+            <section id="cpu">
+                <h2>CPU</h2>
+                <div id="cpu-score">0</div>
+                <article class="choices">
+                    <button disabled>
+                        <img src="/ppt/src/rock.png" alt="Rock">
+                    </button>
+                    <button disabled>
+                        <img src="/ppt/src/paper.png" alt="Paper">
+                    </button>
+                    <button disabled>
+                        <img src="/ppt/src/scissors.png" alt="Scissors">
+                    </button>
+                </article>
+                <p>The CPU chooses!</p>
+                <div id="cpu-choice" class="choice">
+                    <img id="cpu-choice-img" src="" alt="">
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="modal-message">You won!</p>
+        </div>
+    </div>
+    <div id="cursor-light"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
