@@ -19,7 +19,9 @@ document.addEventListener("DOMContentLoaded", function() {
         cursorLight.style.left = `${x}px`;
         cursorLight.style.top = `${y}px`;
     });
+    
     gameSound.play();
+
 });
 
 function resetChoices() {
@@ -35,12 +37,31 @@ function userChoice(choice) {
     const cpuChoices = ['rock', 'paper', 'scissors'];
     const cpuChoice = cpuChoices[Math.floor(Math.random() * cpuChoices.length)];
 
+    resAnim('user-choice-img');
+    resAnim('cpu-choice-img')
+
     document.getElementById('user-choice-img').src = `/ppt/src/${choice}.png`;
     document.getElementById('user-choice-img').alt = choice;
     document.getElementById('cpu-choice-img').src = `/ppt/src/${cpuChoice}.png`;
     document.getElementById('cpu-choice-img').alt = cpuChoice;
 
+    addAnim('user-choice-img');
+    addAnim('cpu-choice-img');
+
     dtrmnWinner(choice, cpuChoice);
+}
+
+function resAnim(id) {
+    const element = document.getElementById(id);
+
+    element.classList.remove('animated');
+    void element.offsetWidth;
+}
+
+function addAnim(id) {
+    const element = document.getElementById(id);
+
+    element.classList.add('animated');
 }
 
 function dtrmnWinner(user, cpu) {
@@ -111,3 +132,13 @@ function reloadGame() {
     document.getElementById('cpu-score').textContent = cpuScore;
     resetChoices();
 }
+
+document.getElementById('reload').addEventListener('click', function() {
+    document.body.classList.add('shake-anim');
+
+    setTimeout(() => {
+        document.body.classList.remove('shake-anim');
+    }, 500);
+
+    reloadGame();
+});
