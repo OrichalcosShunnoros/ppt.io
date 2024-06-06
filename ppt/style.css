@@ -11,15 +11,16 @@ body {
     overflow: hidden;
     cursor: none;
     background: #3d007a;
-
 }
 
 header {
     box-shadow: inset 0 3rem 3em #0000001a, 0.3em 1em 1em #0000004d;
-    background: linear-gradient(to right left,  #000, #3d007a);
+    background: linear-gradient(to right left, #000, #3d007a);
     margin: 1%;
-    margin-left: 28.5%;
-    width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    max-width: 50rem;
 }
 
 h1 {
@@ -29,7 +30,6 @@ h1 {
     font-weight: 700;
     font-style: normal;
     text-shadow: #fff 1px 0 5px;
-    
 }
 
 p {
@@ -84,7 +84,7 @@ button:disabled {
     margin-top: 1rem;
     border-radius: 10px;
     padding: 20px;
-    width: 80%;
+    width: 90%;
     max-width: 1000px;
     display: flex;
     flex-direction: row;
@@ -92,7 +92,6 @@ button:disabled {
     align-items: center;
     height: 80%;
     box-shadow: inset 0 3rem 3em #0000001a, 2rem 2rem 2rem #0000004d;
-
 }
 
 #user, #cpu {
@@ -124,25 +123,25 @@ button:disabled {
 }
 
 .modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: #000000; 
-    background-color: #00000066; 
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #000000;
+    background-color: #00000066;
 }
 
 .modal-content {
     border-radius: 15px;
     background-color: #000;
-    margin: 15% auto; 
+    margin: 15% auto;
     padding: 20px;
     border: 1px solid transparent;
-    width: 80%; 
+    width: 80%;
     max-width: 600px;
     text-align: center;
     animation: colorModal 5s infinite;
@@ -207,109 +206,87 @@ button:disabled {
     }
 }
 
-@media screen and (min-width: 390px) and (max-width: 767px) {
-
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        background: linear-gradient(to top, #3d007a, #000000);
-    }
-
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
     header {
-        margin: 0.5rem;
-        width: 20rem;
+        width: 80%;
     }
-
-    h1 {
-        margin-left: 2rem;
-        margin-right: 2rem;
-        margin-top: 2rem;
-        font-size: x-large;
+    
+    #result {
+        flex-direction: column;
+        height: auto;
     }
 
     #user, #cpu {
-        height: 110%;
-
+        width: 100%;
+        margin-bottom: 20px;
     }
 
-    #game {
-        height: 80%;
+    .choices img {
+        width: 60px;
+        height: 60px;
+    }
+
+    #user-choice img, #cpu-choice img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
     }
 
     button {
-        width: 5rem;
-        height: 5rem;
-        text-align: center;
-        font-size: 15px;
-        display: flex;
-
+        font-size: 1rem;
+        padding: 8px 16px;
     }
 
-    #reload {
-        height: 2rem;
-        padding: 1rem;
-        padding-top: 0.5rem;
+    #uScore, #cpu-score {
+        font-size: 1.5rem;
     }
 
     .choices img {
         width: 50px;
         height: 50px;
     }
+
+    #user-choice img, #cpu-choice img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
 }
 
-  @media screen and (min-width: 768px) and (max-width: 1440px) {
-
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        background: linear-gradient(to bottom, #3d007a, #000000);
-
-
-    }
-
-    header {
-        margin-top: 1rem;
-        margin-left: 1%;
-        width: 35rem;
-    }
-
-    #result {
-        width: 35rem;
-        padding: 5rem;
-    }
-
-}
-
-@media screen and (min-width: 1440px) {
-
-    header {
-        margin: 0.5rem;
-        width: 20rem;
-    }
-
+@media (max-width: 480px) {
     h1 {
-        margin-left: 2rem;
-        margin-right: 2rem;
-        margin-top: 2rem;
-        font-size: x-large;
+        font-size: 1.5rem;
     }
 
-    #user, #cpu {
-        height: 110%;
-
+    button {
+        font-size: 0.9rem;
+        padding: 5px 10px;
     }
 
-    #game {
-        height: 80%;
+    #uScore, #cpu-score {
+        font-size: 1.2rem;
     }
 
-    header {
-        margin-left: 1rem;
-        width: 30rem;
+    .choices img {
+        width: 40px;
+        height: 40px;
     }
 
+    #user-choice img, #cpu-choice img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .modal-content {
+        width: 100%;
+    }
 }
