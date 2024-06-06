@@ -3,9 +3,9 @@ let cpuScore = 0;
 let userStreak = 0;
 let cpuStreak = 0;
 
-const userWinSound = new Audio('/ppt/src/win.mp3');
-const cpuWinSound = new Audio('/ppt/src/lose.mp3');
-const gameSound = new Audio('/ppt/src/soundG.mp3');
+const userWinSound = new Audio('src/win.mp3');
+const cpuWinSound = new Audio('src/lose.mp3');
+const gameSound = new Audio('src/soundG.mp3');
 
 const cursorLight = document.getElementById('cursor-light');
 
@@ -25,9 +25,9 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function resetChoices() {
-    document.getElementById('user-choice-img').src = '/ppt/src/loadOption.gif';
+    document.getElementById('user-choice-img').src = 'src/loadOption.gif';
     document.getElementById('user-choice-img').alt = 'Waiting for choice';
-    document.getElementById('cpu-choice-img').src = '/ppt/src/loadOption.gif';
+    document.getElementById('cpu-choice-img').src = 'src/loadOption.gif';
     document.getElementById('cpu-choice-img').alt = 'Waiting for choice';
 
     gameSound.play();    
@@ -40,9 +40,9 @@ function userChoice(choice) {
     resAnim('user-choice-img');
     resAnim('cpu-choice-img')
 
-    document.getElementById('user-choice-img').src = `/ppt/src/${choice}.png`;
+    document.getElementById('user-choice-img').src = `src/${choice}.png`;
     document.getElementById('user-choice-img').alt = choice;
-    document.getElementById('cpu-choice-img').src = `/ppt/src/${cpuChoice}.png`;
+    document.getElementById('cpu-choice-img').src = `src/${cpuChoice}.png`;
     document.getElementById('cpu-choice-img').alt = cpuChoice;
 
     addAnim('user-choice-img');
